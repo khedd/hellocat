@@ -1,0 +1,6 @@
+cffi==1.11.5
+enum==0.4.7
+numpy==1.15.2
+PyAudio==0.2.11
+pycparser==2.19
+SoundFile==0.10.2
