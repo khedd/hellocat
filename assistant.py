@@ -5,7 +5,7 @@ from os import system
 class Assistant:
     states = {None: ["hello cat", "open folder", "open app"],
               "hello cat": ["open folder", "open app"],
-              "open app": ["firefox", "visual code", "ins ta gram", "duo lingo", "twitter"],
+              "open app": ["firefox", "visual code", "ins ta gram", "duo lingo", "twitter", "git hub", "g mail"],
               "open folder": ["thesis"]
               }
     replies = {"hello cat": "hello", 
@@ -14,6 +14,9 @@ class Assistant:
                "ins ta gram": "opening instagram",
                "duo lingo": "opening duolingo",
                "twitter": "opening twitter",
+               "git hub": "opening github",
+               "g mail": "opening gmail",
+               "thesis": "opening thesis folder",
                "firefox": "opening firefox."
                }
 
@@ -21,6 +24,8 @@ class Assistant:
                  "thesis": "nautilus /home/khedd/Documents/thesis/",
                  "ins ta gram": "firefox www.instagram.com",
                  "duo lingo": "firefox www.duolingo.com",
+                 "git hub": "firefox www.github.com/trending",
+                 "g mail": "firefox https://mail.google.com/mail/u/0/",
                  "twitter": "firefox www.twitter.com"
                 }
     def __init__(self):
