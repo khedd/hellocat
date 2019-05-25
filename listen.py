@@ -1,3 +1,10 @@
+"""
+Listener listens the audio_stream and tries to match with learned porcupine sound files.
+If a match is found, its index is returned through listen method
+
+"""
+
+
 import os
 import platform
 import struct
@@ -10,12 +17,8 @@ import numpy as np
 import pyaudio
 import soundfile
 
-sys.path.append('/home/khedd/Dev/Fun/Porcupine/binding/python/')
 from porcupine import Porcupine
 
-library_path = "/home/khedd/Dev/Fun/Porcupine/lib/linux/x86_64/libpv_porcupine.so"
-model_file_path = "/home/khedd/Dev/Fun/Porcupine/lib/common/porcupine_params.pv"
-keyword_file_paths = ""
 
 class Listener:
     def __init__(self,
@@ -69,11 +72,3 @@ class Listener:
         else:
             return None
 
-    @staticmethod
-    def create():
-        keyword_file_paths = glob.glob( "/home/khedd/Dev/python/asst/khedd/keywords/*.ppn")
-        sensitivities = [0.5] * len(keyword_file_paths)
-        print(sensitivities)
-        print(keyword_file_paths)
-        l = Listener(library_path, model_file_path, keyword_file_paths, sensitivities)
-        return l
